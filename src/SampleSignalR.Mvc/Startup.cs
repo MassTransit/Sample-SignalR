@@ -35,11 +35,11 @@ namespace SampleSignalR.Mvc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR().AddMassTransitBackplane();
+            services.AddSignalR();
 
             services.AddMassTransit(x =>
             {
-                x.AddSignalRHubConsumers<ChatHub>();
+                x.AddSignalRHub<ChatHub>();
 
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
@@ -47,7 +47,7 @@ namespace SampleSignalR.Mvc
 
                     cfg.UseHealthCheck(provider);
 
-                    cfg.AddSignalRHubEndpoints<ChatHub>(provider);
+                    cfg.ConfigureEndpoints(provider);
                 }));
             });
 
