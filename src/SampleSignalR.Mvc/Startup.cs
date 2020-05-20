@@ -16,7 +16,6 @@ namespace SampleSignalR.Mvc
     using System.Threading.Tasks;
     using Hubs;
     using MassTransit;
-    using MassTransit.AspNetCoreIntegration;
     using MassTransit.SignalR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Diagnostics.HealthChecks;
