@@ -40,14 +40,12 @@ namespace SampleSignalR.Mvc
             {
                 x.AddSignalRHub<ChatHub>();
 
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                x.UsingRabbitMq((context,cfg) =>
                 {
                     cfg.Host("localhost", "/");
 
-                    cfg.UseHealthCheck(provider);
-
-                    cfg.ConfigureEndpoints(provider);
-                }));
+                    cfg.ConfigureEndpoints(context);
+                });
             });
 
             services.AddMassTransitHostedService();
