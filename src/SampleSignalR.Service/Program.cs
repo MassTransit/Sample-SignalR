@@ -22,7 +22,7 @@ await busControl.StartAsync();
 
 do
 {
-    Console.WriteLine("Enter message (or quit to exit)");
+    Console.WriteLine("Enter hub message (or quit to exit)");
     Console.Write("> ");
     var value = Console.ReadLine();
 
@@ -31,7 +31,7 @@ do
 
     await busControl.Publish<All<ChatHub>>(new
     {
-        Messages = protocols.ToProtocolDictionary("broadcastMessage", new object[] {"backend-process", value})
+        Messages = protocols.ToProtocolDictionary("broadcastMessage", new object[] {"backend-process-hubprotocol", value})
     });
 }
 while (true);

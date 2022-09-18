@@ -8,6 +8,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SampleSignalR.Mvc.Consumer;
 using SampleSignalR.Mvc.Hubs;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ builder.Services.AddSignalR();
 
 builder.Services.AddMassTransit(x =>
 {
+    x.SetKebabCaseEndpointNameFormatter();
+
     x.AddSignalRHub<ChatHub>();
 
     x.UsingRabbitMq((context, cfg) =>
@@ -26,6 +29,9 @@ builder.Services.AddMassTransit(x =>
 
         cfg.ConfigureEndpoints(context);
     });
+
+    // This will be competing consumer if the Mvc scales horizontally, which is fine because the backplane is enabled with MT
+    x.AddConsumersFromNamespaceContaining<BroadcastMessageConsumer>();
 });
 
 var app = builder.Build();

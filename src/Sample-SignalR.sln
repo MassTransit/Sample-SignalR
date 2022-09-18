@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSignalR.Mvc", "SampleSignalR.Mvc\SampleSignalR.Mvc.csproj", "{49B5CC36-5C08-48FF-B143-6093F6BBE90E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSignalR.Service", "SampleSignalR.Service\SampleSignalR.Service.csproj", "{19B9C21B-5E45-47A9-BDA9-86ACC603E0E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSignalR.ConsoleClient", "SampleSignalR.ConsoleClient\SampleSignalR.ConsoleClient.csproj", "{5FEAC55E-AC5B-4D97-87F5-218267D7D016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSignalR.ConsoleClient", "SampleSignalR.ConsoleClient\SampleSignalR.ConsoleClient.csproj", "{5FEAC55E-AC5B-4D97-87F5-218267D7D016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSignalR.Contracts", "SampleSignalR.Contracts\SampleSignalR.Contracts.csproj", "{E5A81889-91A6-4C19-B7E6-C7F835EC2DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSignalR.BackgroundJob", "SampleSignalR.BackgroundJob\SampleSignalR.BackgroundJob.csproj", "{ACF779DB-ECDD-471C-A8DE-234DF84CD04C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{5FEAC55E-AC5B-4D97-87F5-218267D7D016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FEAC55E-AC5B-4D97-87F5-218267D7D016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FEAC55E-AC5B-4D97-87F5-218267D7D016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A81889-91A6-4C19-B7E6-C7F835EC2DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A81889-91A6-4C19-B7E6-C7F835EC2DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A81889-91A6-4C19-B7E6-C7F835EC2DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A81889-91A6-4C19-B7E6-C7F835EC2DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF779DB-ECDD-471C-A8DE-234DF84CD04C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF779DB-ECDD-471C-A8DE-234DF84CD04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF779DB-ECDD-471C-A8DE-234DF84CD04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF779DB-ECDD-471C-A8DE-234DF84CD04C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
